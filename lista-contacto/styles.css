@@ -1,0 +1,32 @@
+body {
+  background: #f3e8c9;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.librito {
+  background: #fffdf5;
+  border: 2px solid #d4b36a;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 30px;
+  width: 320px;
+  box-shadow: 5px 5px 0 #d4b36a;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 8px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #d4b36a;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
