@@ -10,7 +10,15 @@ function agregarContacto() {
 
   const lista = document.getElementById("lista");
   const li = document.createElement("li");
-  li.textContent = nombre + " - " + telefono + " - " + correo;
+  li.textContent = nombre + " - " + telefono + " - " + correo + " ";
+
+  const btn = document.createElement("button");
+  btn.textContent = "❌";
+  btn.onclick = function() {
+    li.remove();
+  };
+  li.appendChild(btn);
+
   lista.appendChild(li);
 
   document.getElementById("nombre").value = "";
