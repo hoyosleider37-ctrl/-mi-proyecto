@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Contactos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="librito">
+    <h1>📒 Lista de Contactos</h1>
+
+    <input type="text" id="buscar" placeholder="Buscar contacto..." onkeyup="buscarContacto()">
+
+    <input type="text" id="nombre" placeholder="Nombre">
+    <input type="text" id="telefono" placeholder="Teléfono">
+    <input type="text" id="correo" placeholder="Correo">
+
+    <button onclick="agregarContacto()">Agregar contacto</button>
+
+    <ul id="lista"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
