@@ -1,32 +1,82 @@
-body {
-  background: #f3e8c9;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #E6C95C;
   display: flex;
   justify-content: center;
+  padding: 40px 15px;
 }
 
-.librito {
-  background: #fffdf5;
-  border: 2px solid #d4b36a;
-  border-radius: 12px;
-  padding: 20px;
-  margin-top: 30px;
-  width: 320px;
-  box-shadow: 5px 5px 0 #d4b36a;
-}
-
-input {
-  display: block;
+.container {
   width: 100%;
-  margin: 8px 0;
-  padding: 8px;
+  max-width: 420px;
+  text-align: center;
+}
+
+.icons {
+  font-size: 45px;
+  margin-bottom: 30px;
+}
+
+h1 {
+  color: white;
+  margin-bottom: 35px;
+  font-size: 38px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input[type="text"],
+input[type="tel"] {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+}
+
+.gender {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 5px 0;
+  font-size: 17px;
 }
 
 button {
-  width: 100%;
-  padding: 10px;
-  background: #d4b36a;
+  background-color: #1A6BFF;
+  color: white;
   border: none;
-  cursor: pointer;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 17px;
   font-weight: bold;
+  cursor: pointer;
+  align-self: center;
+}
+
+button:hover {
+  background-color: #0d55d6;
+}
+
+#contactList {
+  list-style: none;
+  margin-top: 25px;
+  text-align: left;
+}
+
+#contactList li {
+  background: white;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
 }
