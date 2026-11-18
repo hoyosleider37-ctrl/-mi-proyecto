@@ -1,24 +1,39 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Lista de Contactos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact List</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="librito">
-    <h1>📒 Lista de Contactos</h1>
+  <main class="container">
+    <div class="icons">
+      <span>📞</span>
+      <span>@</span>
+      <span>✉️</span>
+      <span>👆</span>
+    </div>
 
-    <input type="text" id="buscar" placeholder="Buscar contacto..." onkeyup="buscarContacto()">
+    <h1>Contact List</h1>
 
-    <input type="text" id="nombre" placeholder="Nombre">
-    <input type="text" id="telefono" placeholder="Teléfono">
-    <input type="text" id="correo" placeholder="Correo">
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Input your name" required>
+      <input type="text" id="lastname" placeholder="Input your lastname" required>
+      <input type="tel" id="phone" placeholder="Input your phone" required>
+      <input type="text" id="city" placeholder="Input your city" required>
+      <input type="text" id="address" placeholder="Input your address" required>
 
-    <button onclick="agregarContacto()">Agregar contacto</button>
+      <div class="gender">
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+        <label><input type="radio" name="gender" value="Male"> Male</label>
+      </div>
 
-    <ul id="lista"></ul>
-  </div>
+      <button type="submit">ADD</button>
+    </form>
+
+    <ul id="contactList"></ul>
+  </main>
 
   <script src="script.js"></script>
 </body>
