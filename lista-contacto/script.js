@@ -1,27 +1,20 @@
-function agregarContacto() {
-  const nombre = document.getElementById("nombre").value;
-  const telefono = document.getElementById("telefono").value;
-  const correo = document.getElementById("correo").value;
+const form = document.getElementById('contactForm');
+const list = document.getElementById('contactList');
 
-  if (nombre === "") {
-    alert("Escribe un nombre");
-    return;
-  }
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-  const lista = document.getElementById("lista");
-  const li = document.createElement("li");
-  li.textContent = nombre + " - " + telefono + " - " + correo + " ";
+  const name = document.getElementById('name').value;
+  const lastname = document.getElementById('lastname').value;
+  const phone = document.getElementById('phone').value;
+  const city = document.getElementById('city').value;
+  const address = document.getElementById('address').value;
+  const gender = document.querySelector('input[name="gender"]:checked');
 
-  const btn = document.createElement("button");
-  btn.textContent = "❌";
-  btn.onclick = function() {
-    li.remove();
-  };
-  li.appendChild(btn);
+  const li = document.createElement('li');
+  li.innerHTML = `<strong>${name} ${lastname}</strong> - ${gender ? gender.value : ''}<br>
+  📞 ${phone} | 📍 ${city}, ${address}`;
 
-  lista.appendChild(li);
-
-  document.getElementById("nombre").value = "";
-  document.getElementById("telefono").value = "";
-  document.getElementById("correo").value = "";
-}
+  list.appendChild(li);
+  form.reset();
+});
