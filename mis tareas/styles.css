@@ -84,7 +84,22 @@ h1 {
 }
 
 #listaTareas li button {
+  border: none;
+  padding: 7px 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+}
+
+#listaTareas li button:nth-child(1) {
+  background: #2ed573;
+}
+
+#listaTareas li button:nth-child(2) {
+  background: #ffa502;
+}
+
+#listaTareas li button:nth-child(3) {
   background: #ff5e5e;
-  padding: 5px 10px;
-  font-size: 13px;
 }
