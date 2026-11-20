@@ -1,20 +1,30 @@
-const form = document.getElementById('contactForm');
-const list = document.getElementById('contactList');
+document.getElementById("agregarBtn").addEventListener("click", function() {
+  const nombre = document.getElementById("nombre").value.trim();
+  const apellido = document.getElementById("apellido").value.trim();
+  const telefono = document.getElementById("telefono").value.trim();
+  const ciudad = document.getElementById("ciudad").value.trim();
+  const direccion = document.getElementById("direccion").value.trim();
+  const genero = document.querySelector('input[name="genero"]:checked');
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
+  if (nombre === "" || apellido === "") {
+    alert("Escribe al menos nombre y apellido");
+    return;
+  }
 
-  const name = document.getElementById('name').value;
-  const lastname = document.getElementById('lastname').value;
-  const phone = document.getElementById('phone').value;
-  const city = document.getElementById('city').value;
-  const address = document.getElementById('address').value;
-  const gender = document.querySelector('input[name="gender"]:checked');
+  const lista = document.getElementById("listaContactos");
+  const li = document.createElement("li");
+  li.innerHTML = `<b>${nombre} ${apellido}</b> - ${telefono} - ${ciudad} - ${direccion} - ${genero ? genero.value : ""} <button>❌</button>`;
 
-  const li = document.createElement('li');
-  li.innerHTML = `<strong>${name} ${lastname}</strong> - ${gender ? gender.value : ''}<br>
-  📞 ${phone} | 📍 ${city}, ${address}`;
+  li.querySelector("button").addEventListener("click", function() {
+    li.remove();
+  });
 
-  list.appendChild(li);
-  form.reset();
+  lista.appendChild(li);
+
+  // limpiar
+  document.getElementById("nombre").value = "";
+  document.getElementById("apellido").value = "";
+  document.getElementById("telefono").value = "";
+  document.getElementById("ciudad").value = "";
+  document.getElementById("direccion").value = "";
 });

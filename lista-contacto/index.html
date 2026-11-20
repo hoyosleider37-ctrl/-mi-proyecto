@@ -1,39 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact List</title>
+  <title>Lista de Contactos</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="container">
-    <div class="icons">
-      <span>📞</span>
-      <span>@</span>
-      <span>✉️</span>
-      <span>👆</span>
+
+  <div class="container">
+    <div class="decoracion">📞 @ ✉️ 👆</div>
+    <h1>Lista de contactos</h1>
+
+    <input type="text" id="nombre" placeholder="Introduce tu nombre">
+    <input type="text" id="apellido" placeholder="Introduce tu apellido">
+    <input type="text" id="telefono" placeholder="Introduce tu teléfono">
+    <input type="text" id="ciudad" placeholder="Introduce tu ciudad">
+    <input type="text" id="direccion" placeholder="Introduce tu dirección">
+
+    <div class="genero">
+      <label><input type="radio" name="genero" value="Femenino"> Femenino</label>
+      <label><input type="radio" name="genero" value="Masculino"> Masculino</label>
     </div>
 
-    <h1>Contact List</h1>
+    <button id="agregarBtn">ADD</button>
 
-    <form id="contactForm">
-      <input type="text" id="name" placeholder="Input your name" required>
-      <input type="text" id="lastname" placeholder="Input your lastname" required>
-      <input type="tel" id="phone" placeholder="Input your phone" required>
-      <input type="text" id="city" placeholder="Input your city" required>
-      <input type="text" id="address" placeholder="Input your address" required>
-
-      <div class="gender">
-        <label><input type="radio" name="gender" value="Female"> Female</label>
-        <label><input type="radio" name="gender" value="Male"> Male</label>
-      </div>
-
-      <button type="submit">ADD</button>
-    </form>
-
-    <ul id="contactList"></ul>
-  </main>
+    <ul id="listaContactos"></ul>
+  </div>
 
   <script src="script.js"></script>
 </body>

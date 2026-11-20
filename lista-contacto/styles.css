@@ -2,81 +2,88 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-  background-color: #E6C95C;
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  padding: 40px 15px;
+  padding: 40px 0;
 }
 
 .container {
-  width: 100%;
-  max-width: 420px;
+  background: white;
+  width: 90%;
+  max-width: 450px;
+  height: fit-content;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
   text-align: center;
 }
 
-.icons {
-  font-size: 45px;
-  margin-bottom: 30px;
+.decoracion {
+  font-size: 35px;
 }
 
 h1 {
-  color: white;
-  margin-bottom: 35px;
-  font-size: 38px;
+  color: #333;
+  margin: 10px 0 20px;
+  font-size: 28px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-input[type="text"],
-input[type="tel"] {
+.container input[type="text"] {
+  width: 100%;
   padding: 12px;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
+  margin-bottom: 12px;
+  border: 2px solid #eee;
+  border-radius: 10px;
   outline: none;
+  font-size: 15px;
+  background: #f9f9f9;
 }
 
-.gender {
+.container input[type="text"]:focus {
+  border-color: #fda085;
+  background: white;
+}
+
+.genero {
   display: flex;
   justify-content: center;
-  gap: 25px;
-  margin: 5px 0;
-  font-size: 17px;
+  gap: 20px;
+  margin: 5px 0 18px;
+  font-size: 15px;
+  color: #333;
 }
 
-button {
-  background-color: #1A6BFF;
+#agregarBtn {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: white;
   border: none;
-  padding: 12px 20px;
-  border-radius: 6px;
-  font-size: 17px;
+  border-radius: 10px;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  align-self: center;
 }
 
-button:hover {
-  background-color: #0d55d6;
+#agregarBtn:hover {
+  opacity: 0.9;
 }
 
-#contactList {
+#listaContactos {
   list-style: none;
-  margin-top: 25px;
+  margin-top: 20px;
   text-align: left;
 }
 
-#contactList li {
-  background: white;
+#listaContactos li {
+  background: #f7f7f7;
   padding: 12px;
-  border-radius: 6px;
   margin-bottom: 10px;
+  border-radius: 10px;
 }
