@@ -104,13 +104,10 @@ h1 {
   background: #ff5e5e;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 @media (max-width: 600px) {
   body {
     padding: 10px;
+    padding-top: 20px;
   }
   .container {
     width: 100% !important;
@@ -118,8 +115,7 @@ h1 {
     padding: 15px !important;
   }
   .formulario {
-    display: flex;
-    flex-direction: column;
+    flex-direction: column !important;
     gap: 10px;
   }
   #tareaInput {
