@@ -1,0 +1,16 @@
+const express = require('express');
+const app = express();
+const PORT = 3000;
+app.use(express.json());
+app.use(express.static('.'));
+let tareas = [{ id: 1, titulo: 'Estudiar para el examen', completada: false }];
+let contactos = [{ id: 1, nombre: 'Leider', apellido: 'Hoyos', telefono: '3001234567', ciudad: 'Puerto Tejada', direccion: 'Calle 1', genero: 'Masculino' }];
+app.get('/api/tareas', (req, res) => res.json(tareas));
+app.post('/api/tareas', (req, res) => { const n = { id: Date.now(), ...req.body }; tareas.push(n); res.status(201).json(n); });
+app.put('/api/tareas/:id', (req, res) => { const id = Number(req.params.id); tareas = tareas.map(t => t.id === id ? { ...t, ...req.body } : t); res.json({ mensaje: 'Tarea actualizada' }); });
+app.delete('/api/tareas/:id', (req, res) => { tareas = tareas.filter(t => t.id !== Number(req.params.id)); res.json({ mensaje: 'Tarea eliminada' }); });
+app.get('/api/contactos', (req, res) => res.json(contactos));
+app.post('/api/contactos', (req, res) => { const n = { id: Date.now(), ...req.body }; contactos.push(n); res.status(201).json(n); });
+app.put('/api/contactos/:id', (req, res) => { const id = Number(req.params.id); contactos = contactos.map(c => c.id === id ? { ...c, ...req.body } : c); res.json({ mensaje: 'Contacto actualizado' }); });
+app.delete('/api/contactos/:id', (req, res) => { contactos = contactos.filter(c => c.id !== Number(req.params.id)); res.json({ mensaje: 'Contacto eliminado' }); });
+app.listen(PORT, () => console.log(`Servidor en http://localhost:${PORT}`));
